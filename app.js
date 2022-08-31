@@ -20,7 +20,7 @@ searchButton.addEventListener('click', (e) => {
 const getWeather = async (city) => {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=21ebd1093214bb2e0ea7c63089aeba68`,
-           {mode: 'cors'}
+            { mode: 'cors' }
         );
 
         const weatherData = await response.json();
@@ -51,10 +51,9 @@ const getWeather = async (city) => {
                 tempicon.src = "./icons/sun.png"
             }
     }
-catch(error)
-{
-    alert('city not found');
-}
+    catch (error) {
+        alert('city not found');
+    }
 
 };
 
@@ -85,9 +84,9 @@ window.addEventListener("load", () => {
             const proxy = "https://cors-anywhere.herokuapp.com/";
             console.log("im running")
 
-            const api = `${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=21ebd1093214bb2e0ea7c63089aeba68`
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=21ebd1093214bb2e0ea7c63089aeba68`
 
-            fetch(api).then((response) => {
+            fetch(api, { mode: 'cors' }).then((response) => {
                 return response.json();
             }).then(data => {
                 const { name } = data;
