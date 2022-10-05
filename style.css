@@ -101,3 +101,19 @@ main{
 input{
     border: none;
 }
+footer{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem 0;
+    color: white;
+}
+
+footer a{
+    color: white;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
